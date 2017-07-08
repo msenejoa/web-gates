@@ -15,8 +15,11 @@ The application also reads and displays the results on a data dashaboard.
 - [Bootstrap Form Generator](https://bootsnipp.com/forms) A bootstrap form generator
 
 
+###Visually displayed data
+![](/screenshot-2.png?raw=true)
+###Bootstrap form 
+![](/screenshot-1.png?raw=true)
 
-![](/Screenshot.png?raw=true)
 
 ## Getting started
 
