@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gates Test</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <link rel="stylesheet" type="text/css" href="static/assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/assets/css/keen-dashboards.css" />
+  <link href="static/assets/css/c3.css" rel="stylesheet" type="text/css">
+</head>
+<body class="application">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="static/assets/js/c3.min.js"></script>
+
+
+<div id="mac-10" >
+  <div class="container-fluid">
+    <div class="row" >
+      <div align="center" style="font-size:65px">Machine 10</div>
+
+    </div>
+    <div class="row" >
+      <div class="col-sm-8" >
+        <div class="chart-wrapper">
+          <div class="chart-title" >
+            <h3>Machine Strength</h3>
+          </div>
+          <div class="chart-stage" style ="height:550px">
+            <div id="ten_strength">
+              <script type="text/javascript" src="{{ url_for('static', filename='assets/js/fud.js') }}"></script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <h3>Average Strength</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px">
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ average_10|safe }} </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <h3>Average Wire Thickness</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px">
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ thick_10|safe }} </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <h3>Last Deep Clean</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px" >
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ date_10|safe }} </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+           <h3>QA Average</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px" >
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ quality_10|safe }} </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+           <h3>QA Builds </h3>
+          </div>
+          <div class="chart-stage" style ="height:270px" >
+            <div id="ten_quality">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="mac-15" >
+  <div class="container-fluid">
+    <div class="row" >
+      <div align="center" style="font-size:65px">Machine 15</div>
+
+    </div>
+    <div class="row" >
+      <div class="col-sm-8" >
+        <div class="chart-wrapper">
+          <div class="chart-title" >
+            <h3>Machine Strength</h3>
+          </div>
+          <div class="chart-stage" style ="height:550px">
+            <div id="fifteen_strength">
+              <script type="text/javascript" src="{{ url_for('static', filename='assets/js/fud.js') }}"></script>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <h3>Average Strength</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px">
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ average_15|safe }} </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <h3>Average Wire Thickness</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px">
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ thick_15|safe }} </p>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+            <h3>Last Deep Clean</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px" >
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ date_15|safe }} </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+           <h3>QA Average</h3>
+          </div>
+          <div class="chart-stage" style ="height:230px" >
+            <div class="chart-stage text-center"  style="font-size:125px">
+                      <p style="color:black"> {{ quality_15|safe }} </p>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <div class="chart-wrapper">
+          <div class="chart-title">
+           <h3>QA Builds </h3>
+          </div>
+          <div class="chart-stage" style ="height:270px" >
+            <div id="fifteen_quality">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+  <script type="text/javascript" src="static/assets/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="static/assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="static/assets/lib/holderjs/holder.js"></script>
+  <script>
+    Holder.add_theme("white", { background:"#fff", foreground:"#a7a7a7", size:10 });
+  </script>
+
+  <script type="text/javascript" src="static/assets/lib/keen-js/dist/keen.min.js"></script>
+  <script type="text/javascript" src="static/assets/js/meta.js"></script>
+
+</body>
+</html>

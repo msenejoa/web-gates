@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gates Tests</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no' />
+  <link rel="stylesheet" type="text/css" href="static/assets/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" type="text/css" href="static/assets/css/keen-dashboards.css" />
+
+  <link href="static/assets/css/c3.css" rel="stylesheet" type="text/css">
+
+</head>
+<body class="application">
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="static/assets/js/c3.min.js"></script>
+  <!-- <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../">
+          <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+          <li><a href="https://keen.io">Home</a></li>
+          <li><a href="https://keen.io/team">Team</a></li>
+          <li><a href="https://github.com/keenlabs/dashboards/tree/gh-pages/layouts/split-rows">Source</a></li>
+          <li><a href="https://groups.google.com/forum/#!forum/keen-io-devs">Community</a></li><li><a href="http://stackoverflow.com/questions/tagged/keen-io?sort=newest&pageSize=15">Technical Support</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>  -->
+
+<form class="form-horizontal" action="/submit_gates" method = "post">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Gorilla Gates Test</legend>
+
+  <li><a href="/graph">Graphs</a></li>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="tray_name">Tray Name</label>
+  <div class="col-md-4">
+  <input id="tray_name" name="tray_name" placeholder="Enter Tray Name" class="form-control input-md" required="" type="text">
+
+  </div>
+</div>
+
+<!-- Multiple Radios (inline) -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="mac_num">Machine Number</label>
+  <div class="col-md-4">
+    <label class="radio-inline" for="mac_num-0">
+      <input name="mac_num" id="mac_num-0" value="10" checked="checked" type="radio">
+      10
+    </label>
+
+
+    <label class="radio-inline" for="mac_num-3">
+      <input name="mac_num" id="mac_num-3" value="15" type="radio">
+      15
+    </label>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="build_temp">Build Temperature</label>
+  <div class="col-md-4">
+  <input id="build_temp" name="build_temp" placeholder="Temperature" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="beam_offset">Beam Offset</label>
+  <div class="col-md-4">
+  <input id="beam_offset" name="beam_offset" placeholder="in mm" class="form-control input-md" required=""  type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="xscale">X Scaling</label>
+  <div class="col-md-4">
+  <input id="xscale" name="xscale" placeholder="" class="form-control input-md" required=""  type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="yscaling">Y Scaling</label>
+  <div class="col-md-4">
+  <input id="yscaling" name="yscaling" placeholder="" class="form-control input-md" required=""  type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="humidity">Humidity</label>
+  <div class="col-md-4">
+  <input id="humidity" name="humidity" placeholder="" class="form-control input-md" required=""  type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="outside_temp">Outside Temperature</label>
+  <div class="col-md-4">
+  <input id="outside_temp" name="outside_temp" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_thick_one">Right Wire Thickness 1</label>
+  <div class="col-md-4">
+  <input id="r_thick_one" name="r_thick_one" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="right_thick_six">Righ Wire Thickness 6</label>
+  <div class="col-md-4">
+  <input id="right_thick_six" name="right_thick_six" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_val_1">1 </label>
+  <div class="col-md-4">
+  <input id="r_val_1" name="r_val_1" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_val_2">2</label>
+  <div class="col-md-4">
+  <input id="r_val_2" name="r_val_2" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_val_3">3</label>
+  <div class="col-md-4">
+  <input id="r_val_3" name="r_val_3" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_val_4">4</label>
+  <div class="col-md-4">
+  <input id="r_val_4" name="r_val_4" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_val_5">5</label>
+  <div class="col-md-4">
+  <input id="r_val_5" name="r_val_5" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="r_val_6">6</label>
+  <div class="col-md-4">
+  <input id="r_val_6" name="r_val_6" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_thick_one">Left Wire Thickness 1</label>
+  <div class="col-md-4">
+  <input id="l_thick_one" name="l_thick_one" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_thick_six">Left Wire Thickness 6</label>
+  <div class="col-md-4">
+  <input id="l_thick_six" name="l_thick_six" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_val_1">1</label>
+  <div class="col-md-4">
+  <input id="l_val_1" name="l_val_1" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_val_2">2</label>
+  <div class="col-md-4">
+  <input id="l_val_2" name="l_val_2" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_val_3">3</label>
+  <div class="col-md-4">
+  <input id="l_val_3" name="l_val_3" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+  <span class="help-block"> </span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_val_4">4</label>
+  <div class="col-md-4">
+  <input id="l_val_4" name="l_val_4" placeholder=" " class="form-control input-md" required="" type="number" step="0.01">
+  <span class="help-block"> </span>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_val_5">5</label>
+  <div class="col-md-4">
+  <input id="l_val_5" name="l_val_5" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="l_val_6">6</label>
+  <div class="col-md-4">
+  <input id="l_val_6" name="l_val_6" placeholder="" class="form-control input-md" required="" type="number" step="0.01">
+
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="submit_form"></label>
+  <div class="col-md-4">
+    <button id="submit_form" name="submit_form" class="btn btn-primary">Submit</button>
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+
+  <script type="text/javascript" src="static/assets/lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="static/assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="static/assets/lib/holderjs/holder.js"></script>
+
+
+  <script type="text/javascript" src="static/assets/lib/keen-js/dist/keen.min.js"></script>
+  <script type="text/javascript" src="static/assets/js/meta.js"></script>
+
+</body>
+</html>
